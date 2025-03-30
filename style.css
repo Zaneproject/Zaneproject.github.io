@@ -1,3 +1,10 @@
+body {
+    background: #000;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+}
+/* Добавьте остальные стили из вашего дизайна */
+
 :root {
     /* Тёмная тема (по умолчанию) */
     --bg-color: #0a0a0a;
