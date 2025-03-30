@@ -40,6 +40,7 @@ body \{\
     font-family: 'Inter', sans-serif;\
     line-height: 1.6;\
     overflow-x: hidden;\
+}
 \}\
 \
 .container \{\
@@ -48,6 +49,10 @@ body \{\
     padding: 0 20px;\
 \}\
 \
+body {
+    background: #000;
+    color: #fff;
+}
 /* \uc0\u1050 \u1085 \u1086 \u1087 \u1082 \u1080  \u1087 \u1077 \u1088 \u1077 \u1082 \u1083 \u1102 \u1095 \u1077 \u1085 \u1080 \u1103  */\
 .theme-controls \{\
     position: fixed;\
