@@ -1,0 +1,390 @@
+{\rtf1\ansi\ansicpg1251\cocoartf2818
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red246\green249\blue255;\red19\green22\blue30;\red255\green255\blue255;
+}
+{\*\expandedcolortbl;;\cssrgb\c97255\c98039\c100000;\cssrgb\c9412\c11373\c15686;\cssrgb\c100000\c100000\c100000;
+}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs25\fsmilli12573 \cf2 \cb3 \expnd0\expndtw0\kerning0
+:root \{\
+    /* \uc0\u1058 \u1105 \u1084 \u1085 \u1072 \u1103  \u1090 \u1077 \u1084 \u1072  (\u1087 \u1086  \u1091 \u1084 \u1086 \u1083 \u1095 \u1072 \u1085 \u1080 \u1102 ) */\
+    --bg-color: #0a0a0a;\
+    --text-color: #f0f0f0;\
+    --accent-color: #8b0000;\
+    --card-bg: #1a1a1a;\
+    --border-color: #333;\
+\}\
+\
+/* \uc0\u1057 \u1074 \u1077 \u1090 \u1083 \u1072 \u1103  \u1090 \u1077 \u1084 \u1072  */\
+.light-theme \{\
+    --bg-color: #f5f5f5;\
+    --text-color: #333;\
+    --accent-color: #b22222;\
+    --card-bg: #ffffff;\
+    --border-color: #ddd;\
+\}\
+\
+* \{\
+    margin: 0;\
+    padding: 0;\
+    box-sizing: border-box;\
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;\
+\}\
+\
+body \{\
+    background-color: var(--bg-color);\
+    color: var(--text-color);\
+    font-family: 'Inter', sans-serif;\
+    line-height: 1.6;\
+    overflow-x: hidden;\
+\}\
+\
+.container \{\
+    max-width: 1200px;\
+    margin: 0 auto;\
+    padding: 0 20px;\
+\}\
+\
+/* \uc0\u1050 \u1085 \u1086 \u1087 \u1082 \u1080  \u1087 \u1077 \u1088 \u1077 \u1082 \u1083 \u1102 \u1095 \u1077 \u1085 \u1080 \u1103  */\
+.theme-controls \{\
+    position: fixed;\
+    top: 20px;\
+    right: 20px;\
+    display: flex;\
+    gap: 10px;\
+    z-index: 100;\
+\}\
+\
+.theme-btn \{\
+    width: 40px;\
+    height: 40px;\
+    border-radius: 50%;\
+    background: var(--card-bg);\
+    border: 1px solid var(--border-color);\
+    color: var(--text-color);\
+    cursor: pointer;\
+    display: flex;\
+    align-items: center;\
+    justify-content: center;\
+    transition: all 0.3s;\
+\}\
+\
+.theme-btn:hover \{\
+    background: var(--accent-color);\
+    color: white;\
+    transform: scale(1.1);\
+\}\
+\
+/* \uc0\u1042 \u1072 \u1088 \u1080 \u1072 \u1085 \u1090 \u1099  \u1096 \u1088 \u1080 \u1092 \u1090 \u1086 \u1074  */\
+.standard \{\
+    font-family: 'Inter', sans-serif;\
+\}\
+\
+.serif \{\
+    font-family: 'Cormorant Garamond', serif;\
+\}\
+\
+.monospace \{\
+    font-family: 'Roboto Mono', monospace;\
+\}\
+\
+/* \uc0\u1054 \u1089 \u1090 \u1072 \u1083 \u1100 \u1085 \u1099 \u1077  \u1089 \u1090 \u1080 \u1083 \u1080  */\
+header \{\
+    padding: 60px 0 40px;\
+    position: relative;\
+\}\
+\
+.knife-cut-title \{\
+    font-family: 'Playfair Display', serif;\
+    font-size: clamp(2.5rem, 8vw, 5rem);\
+    font-weight: 700;\
+    text-align: center;\
+    margin-bottom: 40px;\
+    line-height: 1.2;\
+    position: relative;\
+\}\
+\
+.word \{\
+    display: inline-block;\
+    position: relative;\
+    margin: 0 5px;\
+\}\
+\
+.word::after \{\
+    content: '';\
+    position: absolute;\
+    bottom: -5px;\
+    left: 0;\
+    width: 100%;\
+    height: 2px;\
+    background: var(--accent-color);\
+    transform: scaleX(0);\
+    transform-origin: right;\
+    transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);\
+\}\
+\
+.word:hover::after \{\
+    transform: scaleX(1);\
+    transform-origin: left;\
+\}\
+\
+nav \{\
+    display: flex;\
+    justify-content: center;\
+    gap: 30px;\
+    margin-bottom: 40px;\
+\}\
+\
+nav a \{\
+    color: var(--text-color);\
+    text-decoration: none;\
+    font-size: 1.1rem;\
+    position: relative;\
+    padding: 5px 0;\
+    opacity: 0.8;\
+    transition: opacity 0.3s;\
+\}\
+\
+nav a:hover \{\
+    opacity: 1;\
+\}\
+\
+nav a::after \{\
+    content: '';\
+    position: absolute;\
+    bottom: 0;\
+    left: 0;\
+    width: 0;\
+    height: 1px;\
+    background: var(--accent-color);\
+    transition: width 0.3s ease;\
+\}\
+\
+nav a:hover::after \{\
+    width: 100%;\
+\}\
+\
+section \{\
+    padding: 60px 0;\
+    position: relative;\
+\}\
+\
+h2 \{\
+    font-family: 'Playfair Display', serif;\
+    font-size: 2.5rem;\
+    margin-bottom: 30px;\
+    position: relative;\
+    display: inline-block;\
+\}\
+\
+h2::after \{\
+    content: '';\
+    position: absolute;\
+    bottom: -10px;\
+    left: 0;\
+    width: 60px;\
+    height: 3px;\
+    background: var(--accent-color);\
+\}\
+\
+.about p \{\
+    font-size: 1.2rem;\
+    max-width: 800px;\
+    margin: 0 auto;\
+    opacity: 0.9;\
+\}\
+\
+.chapter \{\
+    background: var(--card-bg);\
+    padding: 40px;\
+    border-left: 3px solid var(--accent-color);\
+    margin-bottom: 40px;\
+    transition: transform 0.3s;\
+\}\
+\
+.chapter:hover \{\
+    transform: translateY(-5px);\
+\}\
+\
+h3 \{\
+    font-family: 'Playfair Display', serif;\
+    font-size: 1.8rem;\
+    margin-bottom: 20px;\
+    color: var(--accent-color);\
+\}\
+\
+.first-letter::first-letter \{\
+    font-size: 3em;\
+    float: left;\
+    line-height: 0.8;\
+    margin-right: 10px;\
+    color: var(--accent-color);\
+    font-family: 'Playfair Display', serif;\
+\}\
+\
+.read-more \{\
+    display: inline-block;\
+    margin-top: 20px;\
+    color: var(--accent-color);\
+    text-decoration: none;\
+    font-weight: 500;\
+    position: relative;\
+\}\
+\
+.read-more::after \{\
+    content: '\uc0\u8594 ';\
+    margin-left: 5px;\
+    transition: transform 0.3s;\
+\}\
+\
+.read-more:hover::after \{\
+    transform: translateX(5px);\
+\}\
+\
+.chapter-list \{\
+    display: grid;\
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));\
+    gap: 20px;\
+\}\
+\
+.chapter-link \{\
+    display: block;\
+    padding: 20px;\
+    background: var(--card-bg);\
+    color: var(--text-color);\
+    text-decoration: none;\
+    transition: all 0.3s;\
+    border-left: 2px solid transparent;\
+\}\
+\
+.chapter-link:hover \{\
+    background: rgba(0, 0, 0, 0.1);\
+    border-left: 2px solid var(--accent-color);\
+\}\
+\
+.chapter-title \{\
+    display: block;\
+    font-weight: 500;\
+    margin-bottom: 5px;\
+\}\
+\
+.chapter-date \{\
+    opacity: 0.6;\
+    font-size: 0.9rem;\
+\}\
+\
+.subscribe-form \{\
+    max-width: 500px;\
+    margin: 0 auto;\
+    display: flex;\
+    gap: 10px;\
+\}\
+\
+input[type="email"] \{\
+    flex: 1;\
+    padding: 15px;\
+    background: var(--card-bg);\
+    border: 1px solid var(--border-color);\
+    color: var(--text-color);\
+    font-family: inherit;\
+\}\
+\
+button[type="submit"] \{\
+    padding: 15px 30px;\
+    background: var(--accent-color);\
+    color: white;\
+    border: none;\
+    font-family: inherit;\
+    font-weight: 500;\
+    cursor: pointer;\
+    transition: background 0.3s;\
+\}\
+\
+button[type="submit"]:hover \{\
+    background: #6b0000;\
+\}\
+\
+footer \{\
+    padding: 40px 0;\
+    text-align: center;\
+    opacity: 0.7;\
+    font-size: 0.9rem;\
+  \
+  /* \uc0\u1057 \u1086 \u1094 \u1089 \u1077 \u1090 \u1080  */\
+.social-links \{\
+    display: flex;\
+    justify-content: center;\
+    gap: 20px;\
+    margin-bottom: 20px;\
+\}\
+\
+.social-link \{\
+    width: 40px;\
+    height: 40px;\
+    border-radius: 50%;\
+    display: flex;\
+    align-items: center;\
+    justify-content: center;\
+    transition: all 0.3s;\
+\}\
+\
+.social-link svg \{\
+    fill: var(--text-color);\
+    width: 20px;\
+    height: 20px;\
+    transition: all 0.3s;\
+\}\
+\
+/* \uc0\u1062 \u1074 \u1077 \u1090 \u1072  \u1080 \u1082 \u1086 \u1085 \u1086 \u1082  \u1087 \u1088 \u1080  \u1085 \u1072 \u1074 \u1077 \u1076 \u1077 \u1085 \u1080 \u1080  */\
+.social-link.vk:hover \{\
+    background: #4a76a8;\
+\}\
+.social-link.tg:hover \{\
+    background: #0088cc;\
+\}\
+.social-link.yt:hover \{\
+    background: #ff0000;\
+\}\
+\
+.social-link:hover svg \{\
+    fill: white;\
+    transform: scale(1.2);\
+\}\
+\
+/* \uc0\u1040 \u1076 \u1072 \u1087 \u1090 \u1080 \u1074 \u1085 \u1086 \u1089 \u1090 \u1100  */\
+@media (max-width: 768px) \{\
+    .social-links \{\
+        gap: 15px;\
+    \}\
+    \
+    .social-link \{\
+        width: 36px;\
+        height: 36px;\
+    \}\
+\}\
+\}\
+\
+@media (max-width: 768px) \{\
+    nav \{\
+        flex-direction: column;\
+        align-items: center;\
+        gap: 15px;\
+    \}\
+    \
+    .subscribe-form \{\
+        flex-direction: column;\
+    \}\
+    \
+    .chapter-list \{\
+        grid-template-columns: 1fr;\
+    \}\
+    \
+    .theme-controls \{\
+        top: 10px;\
+        right: 10px;\
+    \}\
+  \
+\}}
