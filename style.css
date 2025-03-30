@@ -162,4 +162,215 @@ section {
 }
 
 h2 {
-    font-family: 'Playfair Display', ser
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    position: relative;
+    display: inline-block;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--accent-color);
+}
+
+.about p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+.chapter {
+    background: var(--card-bg);
+    padding: 40px;
+    border-left: 3px solid var(--accent-color);
+    margin-bottom: 40px;
+    transition: transform 0.3s;
+}
+
+.chapter:hover {
+    transform: translateY(-5px);
+}
+
+h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: var(--accent-color);
+}
+
+.first-letter::first-letter {
+    font-size: 3em;
+    float: left;
+    line-height: 0.8;
+    margin-right: 10px;
+    color: var(--accent-color);
+    font-family: 'Playfair Display', serif;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 20px;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+}
+
+.read-more::after {
+    content: '→';
+    margin-left: 5px;
+    transition: transform 0.3s;
+}
+
+.read-more:hover::after {
+    transform: translateX(5px);
+}
+
+.chapter-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.chapter-link {
+    display: block;
+    padding: 20px;
+    background: var(--card-bg);
+    color: var(--text-color);
+    text-decoration: none;
+    transition: all 0.3s;
+    border-left: 2px solid transparent;
+}
+
+.chapter-link:hover {
+    background: rgba(0, 0, 0, 0.1);
+    border-left: 2px solid var(--accent-color);
+}
+
+.chapter-title {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.chapter-date {
+    opacity: 0.6;
+    font-size: 0.9rem;
+}
+
+.subscribe-form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    gap: 10px;
+}
+
+input[type="email"] {
+    flex: 1;
+    padding: 15px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    font-family: inherit;
+}
+
+button[type="submit"] {
+    padding: 15px 30px;
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    font-family: inherit;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button[type="submit"]:hover {
+    background: #6b0000;
+}
+
+footer {
+    padding: 40px 0;
+    text-align: center;
+    opacity: 0.7;
+    font-size: 0.9rem;
+}
+
+/* Соцсети */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.social-link svg {
+    fill: var(--text-color);
+    width: 20px;
+    height: 20px;
+    transition: all 0.3s;
+}
+
+/* Цвета иконок при наведении */
+.social-link.vk:hover {
+    background: #4a76a8;
+}
+.social-link.tg:hover {
+    background: #0088cc;
+}
+.social-link.yt:hover {
+    background: #ff0000;
+}
+
+.social-link:hover svg {
+    fill: white;
+    transform: scale(1.2);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .subscribe-form {
+        flex-direction: column;
+    }
+    
+    .chapter-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .theme-controls {
+        top: 10px;
+        right: 10px;
+    }
+    
+    .social-links {
+        gap: 15px;
+    }
+    
+    .social-link {
+        width: 36px;
+        height: 36px;
+    }
+}
